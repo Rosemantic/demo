@@ -1,0 +1,25 @@
+/* changjin-lake.css — 长津湖专题 (Light Theme) */
+.page-changjin .hero--short {
+  background: linear-gradient(135deg, #f0e0e0 0%, #e8d0d0 50%, var(--color-bg-primary) 100%);
+}
+.page-changjin .hero--short::after {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, rgba(230,57,70,0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.page-changjin .section::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(230,57,70,0.3), transparent);
+  pointer-events: none;
+}
+.page-changjin .card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 32px rgba(230,57,70,0.1);
+}
+.page-changjin .btn--outline:hover {
+  border-color: var(--color-primary); color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(230,57,70,0.15);
+}
+@media (max-width:768px) {
+  .page-changjin .character-grid, .page-changjin .grid--3col { grid-template-columns: repeat(2,1fr); }
+}

@@ -1,0 +1,38 @@
+/* ============================================
+   harry-potter.css — 哈利波特专题 (Light Theme)
+   ============================================ */
+.page-harry-potter .hero--short {
+  background: linear-gradient(135deg, #e8e0f0 0%, #d4c8e8 50%, var(--color-bg-primary) 100%);
+}
+.page-harry-potter .hero--short::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(124,58,237,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(14,165,233,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.page-harry-potter .section::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124,58,237,0.3), transparent);
+  pointer-events: none;
+}
+.page-harry-potter .card:hover {
+  border-color: var(--color-accent-purple);
+  box-shadow: 0 8px 32px rgba(124,58,237,0.1);
+}
+.page-harry-potter .btn--outline:hover {
+  border-color: var(--color-accent-purple); color: var(--color-accent-purple);
+  box-shadow: 0 4px 16px rgba(124,58,237,0.15);
+}
+.page-harry-potter .poster-section img {
+  max-width: 600px; width: 100%; border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.page-harry-potter .poster-section img:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 20px 60px rgba(124,58,237,0.1);
+}
+@media (max-width:768px) {
+  .page-harry-potter .character-grid, .page-harry-potter .grid--3col { grid-template-columns: repeat(2,1fr); }
+}

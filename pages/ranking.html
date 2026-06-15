@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>热点排行 — 传播正能量资讯</title><link rel="stylesheet" href="../css/reset.css"><link rel="stylesheet" href="../css/variables.css"><link rel="stylesheet" href="../css/base.css"><link rel="stylesheet" href="../css/layout.css"><link rel="stylesheet" href="../css/components.css"><link rel="stylesheet" href="../css/animations.css">
+<style>
+.rk-hero{position:relative;background:#FDF5F0;text-align:center;padding:var(--sp-4xl) var(--sp-xl) var(--sp-3xl);overflow:hidden}
+.rk-hero-decor{position:absolute;top:-40px;right:-40px;font-size:14rem;font-weight:900;color:rgba(0,0,0,.03);line-height:1;pointer-events:none}
+.rk-title{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;color:var(--text);margin:0 0 var(--sp-md)}
+.rk-accent{background:var(--grad-accent);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.rk-item{display:flex;align-items:center;gap:var(--sp-lg);padding:var(--sp-lg) var(--sp-xl);background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);transition:all .35s;cursor:pointer;margin-bottom:var(--sp-md)}
+.rk-item:hover{border-color:var(--border-hover);transform:translateX(6px);box-shadow:var(--shadow-lg)}
+.rk-num{flex-shrink:0;width:64px;height:64px;display:flex;align-items:center;justify-content:center;font-size:1.75rem;font-weight:900;border-radius:var(--radius);transition:transform .3s}
+.rk-item:hover .rk-num{transform:scale(1.12)}
+.rk-num-1{background:linear-gradient(135deg,#f0c040,#ffe082,#c8a020);color:#3e2c00;box-shadow:0 4px 20px rgba(240,192,64,.4)}
+.rk-num-2{background:linear-gradient(135deg,#c0c0c0,#e8e8e8,#909090);color:#2a2a2a;box-shadow:0 4px 20px rgba(192,192,192,.35)}
+.rk-num-3{background:linear-gradient(135deg,#cd7f32,#e8a860,#a0522d);color:#fff7ee;box-shadow:0 4px 20px rgba(205,127,50,.35)}
+.rk-num-4,.rk-num-5{background:var(--bg-warm);color:var(--text-3)}
+.rk-text{flex:1;font-size:1rem;font-weight:600;color:var(--text);line-height:1.5}
+.rk-heat-wrap{flex-shrink:0;display:flex;align-items:center;gap:var(--sp-sm);min-width:130px}
+.rk-heat-bar{width:100px;height:8px;background:#f0f0f0;border-radius:4px;overflow:hidden}
+.rk-heat-fill{height:100%;background:var(--grad-accent);border-radius:4px;transition:width 1.2s var(--ease-out);width:0}
+.rk-heat-val{font-size:.8rem;font-weight:700;color:var(--accent);min-width:28px;text-align:right}
+.rk-side-t{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:var(--sp-sm);padding-bottom:var(--sp-sm);border-bottom:2px solid var(--divider);display:flex;align-items:center;gap:var(--sp-xs)}
+.rk-side-t::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.rk-side-item{display:flex;align-items:center;gap:var(--sp-md);padding:var(--sp-sm) var(--sp-md);border-radius:var(--radius-sm);transition:all .25s;text-decoration:none;color:inherit}
+.rk-side-item:hover{background:var(--bg-card)}
+.rk-side-num{width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;border-radius:4px;flex-shrink:0;background:var(--bg-warm);color:var(--text-3)}
+.rk-side-text{flex:1;font-size:.85rem;color:var(--text-2);line-height:1.4}
+@media(max-width:768px){.rk-item{flex-wrap:wrap;gap:var(--sp-sm);padding:var(--sp-md)}.rk-num{width:48px;height:48px;font-size:1.2rem}.rk-text{font-size:.88rem;width:calc(100% - 64px)}.rk-heat-wrap{width:100%;min-width:auto;justify-content:flex-end;padding-left:60px}.rk-hero-decor{font-size:8rem;top:-20px;right:-20px}}
+</style></head><body>
+<nav class="nav"><div class="nav-inner"><a href="../index.html" class="nav-logo">传播正能量资讯</a><div class="nav-links"><a href="../index.html">首页</a><a href="social.html">社会热点</a><a href="entertainment.html">文娱影视</a><a href="finance-sports.html">财经体育</a><a href="culture-life.html">文旅生活</a><a href="ranking.html" class="active">热点排行</a><a href="interaction.html">互动专区</a></div><div class="nav-toggle"><span></span><span></span><span></span></div></div></nav>
+
+<section class="rk-hero"><div class="hero-watermark hero-watermark-tr" style="font-size:clamp(10rem,22vw,22rem);color:rgba(240,192,64,.06)">#1</div><div class="hero-watermark hero-watermark-tl">TOP</div><div class="hero-glow hero-glow--tr" style="background:radial-gradient(circle,rgba(240,192,64,.08) 0%,transparent 70%)"></div><div class="container" style="position:relative;z-index:1"><div class="section-eyebrow">HOT RANKING</div><div class="hero-accent-bar hero-accent-bar--center"></div><h1 class="rk-title"><span class="rk-accent">热点排行</span></h1><p class="section-sub">用排名、热度与趋势，快速看见当下最受关注的事件与活动。</p><div class="hero-stats" style="justify-content:center"><div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">热门事件</div></div><div class="hero-stat"><div class="hero-stat-num">15</div><div class="hero-stat-label">热门活动</div></div><div class="hero-stat"><div class="hero-stat-num">实时</div><div class="hero-stat-label">更新</div></div></div></div></section>
+
+<section class="section"><div class="container"><div class="section-head"><h2 class="section-title">实时热度排行</h2><p class="section-sub">数据每小时更新 · 真实反映关注度</p></div>
+<div class="grid grid-2 anim-stagger" style="align-items:flex-start">
+<div>
+<div class="rk-item"><div class="rk-num rk-num-1">01</div><span class="rk-text">浙江温岭槽罐车爆炸致19人遇难</span><div class="rk-heat-wrap"><div class="rk-heat-bar"><div class="rk-heat-fill" data-heat="98"></div></div><span class="rk-heat-val">98</span></div></div>
+<div class="rk-item"><div class="rk-num rk-num-2">02</div><span class="rk-text">北京丰台花乡地区升级为疫情高风险地区</span><div class="rk-heat-wrap"><div class="rk-heat-bar"><div class="rk-heat-fill" data-heat="95"></div></div><span class="rk-heat-val">95</span></div></div>
+<div class="rk-item"><div class="rk-num rk-num-3">03</div><span class="rk-text">民航局发出第一份"熔断"指令</span><div class="rk-heat-wrap"><div class="rk-heat-bar"><div class="rk-heat-fill" data-heat="90"></div></div><span class="rk-heat-val">90</span></div></div>
+<div class="rk-item"><div class="rk-num rk-num-4">04</div><span class="rk-text">重庆副市长、公安局长邓恢林被查</span><div class="rk-heat-wrap"><div class="rk-heat-bar"><div class="rk-heat-fill" data-heat="88"></div></div><span class="rk-heat-val">88</span></div></div>
+<div class="rk-item"><div class="rk-num rk-num-5">05</div><span class="rk-text">三文鱼案板现新冠</span><div class="rk-heat-wrap"><div class="rk-heat-bar"><div class="rk-heat-fill" data-heat="85"></div></div><span class="rk-heat-val">85</span></div></div>
+</div>
+<div class="flex-col" style="gap:var(--sp-2xl)">
+<div><div class="rk-side-t">娱乐热点</div><a class="rk-side-item" href="entertainment.html"><span class="rk-side-num">1</span><span class="rk-side-text">外媒资深记者眼中的弗洛伊德事件</span></a><a class="rk-side-item" href="entertainment.html"><span class="rk-side-num">2</span><span class="rk-side-text">国际锐评：对拉美裔倒打一耙</span></a><a class="rk-side-item" href="entertainment.html"><span class="rk-side-num">3</span><span class="rk-side-text">北京新增确诊病例8人详情公布</span></a></div>
+<div><div class="rk-side-t">社会热点</div><a class="rk-side-item" href="social.html"><span class="rk-side-num">1</span><span class="rk-side-text">晚高峰路口7辆车抛锚，过路市民冒雨抬车</span></a><a class="rk-side-item" href="social.html"><span class="rk-side-num">2</span><span class="rk-side-text">亲历者讲述温岭爆炸</span></a><a class="rk-side-item" href="social.html"><span class="rk-side-num">3</span><span class="rk-side-text">北京通报36个新增病例情况</span></a></div>
+<div><div class="rk-side-t">热门活动</div><a class="rk-side-item" href="culture-life.html"><span class="rk-side-num">1</span><span class="rk-side-text">本地文旅活动</span></a><a class="rk-side-item" href="finance-sports.html"><span class="rk-side-num">2</span><span class="rk-side-text">本地消费节</span></a><a class="rk-side-item" href="social.html"><span class="rk-side-num">3</span><span class="rk-side-text">本地公益行动</span></a><a class="rk-side-item" href="finance-sports.html"><span class="rk-side-num">4</span><span class="rk-side-text">本地车展盛会</span></a><a class="rk-side-item" href="culture-life.html"><span class="rk-side-num">5</span><span class="rk-side-text">本地美食市集</span></a></div>
+</div>
+</div></div></section>
+
+<section class="section" style="background:var(--bg-warm)"><div class="container"><div class="section-head"><h2 class="section-title">分类榜单</h2></div>
+<div class="flex-wrap anim-stagger" style="justify-content:center;gap:var(--sp-md)">
+<a href="social.html" class="tag tag--red">社会热点 HOT</a><a href="entertainment.html" class="tag tag--purple">文娱影视 HOT</a><a href="finance-sports.html" class="tag tag--teal">财经体育</a><a href="culture-life.html" class="tag tag--teal">文旅生活</a><a href="social.html" class="tag tag--red">暖心正能量</a><a href="social.html" class="tag">疫情防控</a><a href="social.html" class="tag">国际观察</a><a href="finance-sports.html" class="tag tag--teal">体育赛事</a><a href="culture-life.html" class="tag tag--teal">美食探店</a><a href="entertainment.html" class="tag tag--purple">影视速递</a><a href="interaction.html" class="tag">互动专区</a>
+</div></div></section>
+
+<section class="section-sm"><div class="container" style="text-align:center;display:flex;gap:var(--sp-md);justify-content:center;flex-wrap:wrap"><a href="../index.html" class="btn btn-back"><span class="arr">←</span> 返回首页</a><a href="interaction.html" class="btn btn-outline">互动专区 →</a></div></section>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-logo">传播正能量资讯</div><div class="footer-links"><a href="../index.html">首页</a><a href="social.html">社会热点</a><a href="entertainment.html">文娱影视</a><a href="finance-sports.html">财经体育</a><a href="culture-life.html">文旅生活</a><a href="ranking.html">热点排行</a><a href="interaction.html">互动专区</a></div><p class="footer-copy">© 2026 传播正能量 · 综合资讯平台</p></div></footer>
+<button class="back-top">↑</button>
+
+<script src="../js/vendor/gsap.min.js"></script><script src="../js/vendor/ScrollTrigger.min.js"></script>
+<script>
+(function(){document.querySelectorAll('.rk-heat-fill').forEach(function(b){var h=b.getAttribute('data-heat')||0;setTimeout(function(){b.style.width=h+'%'},300);if(typeof ScrollTrigger!=='undefined'){gsap.registerPlugin(ScrollTrigger);gsap.fromTo(b,{width:'0%'},{width:h+'%',duration:1.2,ease:'power2.out',scrollTrigger:{trigger:b,start:'top 85%',toggleActions:'play none none none'}})}})});
+</script>
+<script src="../js/animations.js"></script></body></html>

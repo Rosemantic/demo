@@ -1,0 +1,32 @@
+/* universe.css — 宇宙闪烁专题 (Light Theme) */
+.page-universe .hero--short {
+  background: linear-gradient(135deg, #d8e8f8 0%, #c0d8f0 50%, var(--color-bg-primary) 100%);
+}
+.page-universe .hero--short::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(14,165,233,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 70%, rgba(124,58,237,0.03) 0%, transparent 40%);
+  pointer-events: none;
+}
+.page-universe .section::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(14,165,233,0.3), transparent);
+  pointer-events: none;
+}
+.page-universe .cover-section img {
+  max-width: 500px; width: 100%; border-radius: var(--radius-xl);
+  box-shadow: 0 16px 48px rgba(14,165,233,0.08);
+}
+.page-universe .audio-player:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 4px 20px rgba(14,165,233,0.1);
+}
+.page-universe .btn--outline:hover {
+  border-color: var(--color-secondary); color: var(--color-secondary);
+  box-shadow: 0 4px 16px rgba(14,165,233,0.15);
+}
+.page-universe .quote-text { color: var(--color-secondary); }
+@media (max-width:768px) {
+  .page-universe .gallery { grid-template-columns: repeat(2,1fr); }
+}

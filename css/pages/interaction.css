@@ -1,0 +1,18 @@
+/* interaction.css — 互动专区 (Light Theme) */
+.page-interaction .hero--short {
+  background: linear-gradient(135deg, #f0e8f8 0%, #e8dcf5 50%, var(--color-bg-primary) 100%);
+}
+.page-interaction .iact-chip { display: inline-flex; align-items: center; padding: var(--spacing-sm) var(--spacing-lg); background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-full); font-size: var(--font-size-sm); color: var(--color-text-secondary); cursor: pointer; transition: all 0.2s; }
+.page-interaction .iact-chip:hover { border-color: var(--color-accent-purple); color: var(--color-accent-purple); background: rgba(124,58,237,0.04); }
+.page-interaction .iact-chip--active { background: rgba(124,58,237,0.08); border-color: var(--color-accent-purple); color: var(--color-accent-purple); }
+.page-interaction .iact-topic-card { display: block; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--color-border); transition: all var(--transition-base); text-decoration: none; }
+.page-interaction .iact-topic-card:hover { border-color: var(--color-border-hover); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.page-interaction .iact-topic-card img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.6s ease; }
+.page-interaction .iact-topic-card:hover img { transform: scale(1.05); }
+.page-interaction .iact-gallery { display: grid; grid-template-columns: repeat(auto-fill,minmax(160px,1fr)); gap: var(--spacing-sm); }
+.page-interaction .iact-gallery__item { aspect-ratio: 1; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--color-border); transition: all 0.2s; cursor: pointer; }
+.page-interaction .iact-gallery__item:hover { border-color: var(--color-border-hover); transform: scale(1.03); }
+.page-interaction .iact-gallery__item img { width: 100%; height: 100%; object-fit: cover; }
+.page-interaction .iact-audio-panel { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--spacing-xl); }
+.tag--active { background: rgba(124,58,237,0.08) !important; border-color: var(--color-accent-purple) !important; color: var(--color-accent-purple) !important; box-shadow: 0 0 12px rgba(124,58,237,0.1); }
+@media (max-width:768px) { .page-interaction .iact-gallery { grid-template-columns: repeat(2,1fr); } }

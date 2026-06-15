@@ -1,0 +1,8 @@
+/* Animation classes — CSS NEVER hides content. JS sets initial state via gsap.set() */
+.anim-visible{opacity:1!important;transform:none!important;visibility:visible!important}
+.anim-parallax{will-change:transform}
+.hero-line-wrap{overflow:hidden;display:block}
+.hero-line{display:block}
+@keyframes expandLine{0%,100%{transform:scaleX(.3);opacity:.4}50%{transform:scaleX(1);opacity:1}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.anim-parallax{will-change:auto}}

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="庐山 · 山水之间的文化诗意 — 云雾、瀑布、湖光与诗意山水">
+<title>庐山 · 旅游文化专题 — 传播正能量资讯</title>
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/variables.css">
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/layout.css">
+<link rel="stylesheet" href="../../css/components.css">
+<link rel="stylesheet" href="../../css/animations.css">
+<style>
+/* ============================================
+   lushan.css — 庐山旅游文化专题页
+   山水之间的文化诗意 · 浅色旅行画册风格
+   ============================================ */
+
+/* -- Page wrapper -- */
+.ls-page{background:var(--bg)}
+
+/* -- Hero Section -- */
+.ls-hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--h-nav) + var(--sp-3xl)) 0 var(--sp-3xl);position:relative;overflow:hidden}
+.ls-hero::before{content:"";position:absolute;top:-30%;right:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(46,196,166,.06) 0%,transparent 70%);pointer-events:none}
+.ls-hero::after{content:"";position:absolute;bottom:-20%;left:-5%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,138,0,.04) 0%,transparent 70%);pointer-events:none}
+.ls-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3xl);align-items:center;position:relative;z-index:2;max-width:var(--w);margin:0 auto;padding:0 var(--sp-xl)}
+.ls-hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;color:var(--accent-teal);text-transform:uppercase;letter-spacing:.12em;margin-bottom:var(--sp-xl);background:rgba(46,196,166,.08);padding:6px 18px;border-radius:20px}
+.ls-hero-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent-teal);animation:pulse 2s ease-in-out infinite}
+.ls-hero-title{font-size:clamp(3rem,7vw,6.5rem);font-weight:900;line-height:.95;letter-spacing:-.04em;margin-bottom:var(--sp-md)}
+.ls-hero-title .hl{background:linear-gradient(135deg,#2EC4A6,#0891b2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ls-hero-sub{font-size:1.15rem;color:var(--text-3);line-height:1.7;margin-bottom:var(--sp-sm);font-weight:300}
+.ls-hero-desc{font-size:.95rem;color:var(--text-3);line-height:1.85;max-width:460px;margin-bottom:var(--sp-2xl)}
+.ls-hero-btns{display:flex;gap:var(--sp-md);flex-wrap:wrap}
+.ls-hero-visual{position:relative;height:100%;min-height:540px;display:flex;align-items:center;justify-content:center}
+.ls-collage{position:relative;width:100%;height:90%;max-height:620px}
+.ls-collage-img{position:absolute;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);border:3px solid #fff;transition:transform .6s var(--ease-out);background:var(--bg-warm)}
+.ls-collage-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ls-collage-img:hover{transform:translateY(-6px);box-shadow:var(--shadow-xl)}
+.ls-ci-1{top:3%;left:0;width:55%;height:52%;z-index:3;background:linear-gradient(135deg,#d4f0e8,#b8e6d4)}
+.ls-ci-2{top:16%;right:0;width:50%;height:40%;z-index:2;background:linear-gradient(135deg,#c8e8f0,#a8d8e8)}
+.ls-ci-3{bottom:5%;left:6%;width:46%;height:50%;z-index:4;background:linear-gradient(135deg,#e8f0d4,#d8e8c0)}
+.ls-ci-4{bottom:0;right:4%;width:42%;height:36%;z-index:1;background:linear-gradient(135deg,#f0e8d4,#e8dcc0)}
+.ls-ci-label{position:absolute;bottom:12px;left:12px;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);padding:4px 12px;border-radius:12px;font-size:.7rem;font-weight:600;color:var(--text-2);z-index:5}
+
+/* -- Decorative line between sections -- */
+.ls-divider{max-width:var(--w);margin:0 auto;padding:0 var(--sp-xl)}
+.ls-divider-line{height:1px;background:var(--divider)}
+
+/* -- Scenic Modules (4图文模块) -- */
+.ls-scenic-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-lg)}
+.ls-scenic-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden;transition:all .35s var(--ease);display:flex;flex-direction:column}
+.ls-scenic-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.ls-scenic-img{width:100%;height:240px;overflow:hidden;position:relative}
+.ls-scenic-img .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--text-4);letter-spacing:.04em}
+.ls-scenic-body{padding:var(--sp-xl);flex:1;display:flex;flex-direction:column}
+.ls-scenic-body h3{font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:var(--sp-sm);line-height:1.3}
+.ls-scenic-body p{font-size:.9rem;color:var(--text-3);line-height:1.75;flex:1}
+.ls-scenic-body .tag-row{display:flex;gap:var(--sp-sm);margin-top:var(--sp-md);flex-wrap:wrap}
+.ls-tag-nature{display:inline-block;padding:3px 12px;border-radius:20px;font-size:.7rem;font-weight:600;background:rgba(46,196,166,.08);color:var(--accent-teal)}
+.ls-tag-warm{display:inline-block;padding:3px 12px;border-radius:20px;font-size:.7rem;font-weight:600;background:rgba(255,138,0,.08);color:var(--accent-orange)}
+
+/* -- Culture Cards (4信息卡) -- */
+.ls-culture-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-lg)}
+.ls-culture-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:var(--sp-xl);transition:all .35s var(--ease);position:relative;overflow:hidden}
+.ls-culture-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent-teal),var(--accent-orange));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease-out)}
+.ls-culture-card:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:var(--shadow)}
+.ls-culture-card:hover::before{transform:scaleX(1)}
+.ls-culture-card .ls-cc-icon{font-size:2rem;margin-bottom:var(--sp-md);display:block}
+.ls-culture-card h4{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:var(--sp-sm)}
+.ls-culture-card p{font-size:.85rem;color:var(--text-3);line-height:1.65}
+
+/* -- Gallery (6图错位布局) -- */
+.ls-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-lg);grid-auto-rows:220px}
+.ls-gallery-item{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-sm);transition:all .35s var(--ease);cursor:pointer;position:relative}
+.ls-gallery-item:hover{transform:scale(1.03);box-shadow:var(--shadow-lg);z-index:2}
+.ls-gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--ease-out)}
+.ls-gallery-item:hover img{transform:scale(1.08)}
+.ls-gallery-item .ls-gi-label{position:absolute;bottom:0;left:0;right:0;padding:var(--sp-md);background:linear-gradient(transparent,rgba(0,0,0,.4));color:#fff;font-size:.8rem;font-weight:500;opacity:0;transition:opacity .3s}
+.ls-gallery-item:hover .ls-gi-label{opacity:1}
+.ls-gallery-item:nth-child(1){grid-row:span 2}
+.ls-gallery-item:nth-child(4){grid-column:span 2}
+
+/* -- Audio Module -- */
+.ls-audio-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-xl);padding:var(--sp-2xl);text-align:center;max-width:640px;margin:0 auto;transition:all .35s var(--ease)}
+.ls-audio-card:hover{border-color:var(--border-hover);box-shadow:var(--shadow)}
+.ls-audio-card h3{font-size:1.2rem;font-weight:700;color:var(--text);margin-bottom:var(--sp-sm)}
+.ls-audio-card .ls-audio-desc{font-size:.88rem;color:var(--text-3);margin-bottom:var(--sp-lg)}
+.ls-audio-player{display:flex;align-items:center;gap:var(--sp-md);padding:var(--sp-md) var(--sp-lg);background:var(--bg-warm);border-radius:var(--radius);border:1px solid var(--border)}
+.ls-audio-player .ls-ap-icon{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2EC4A6,#0891b2);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;flex-shrink:0}
+.ls-audio-player .ls-ap-info{flex:1;text-align:left;min-width:0}
+.ls-audio-player .ls-ap-title{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.ls-audio-player .ls-ap-hint{font-size:.75rem;color:var(--text-4)}
+.ls-audio-player audio{width:200px;flex-shrink:0}
+
+/* -- Back + Home row -- */
+.ls-bottom-row{text-align:center;display:flex;gap:var(--sp-md);justify-content:center;flex-wrap:wrap}
+
+/* -- Responsive -- */
+@media(max-width:1024px){
+  .ls-culture-grid{grid-template-columns:repeat(2,1fr)}
+  .ls-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+  .ls-gallery-item:nth-child(1){grid-row:span 1}
+  .ls-gallery-item:nth-child(4){grid-column:span 1}
+}
+@media(max-width:768px){
+  .ls-hero-inner{grid-template-columns:1fr}
+  .ls-hero-visual{min-height:380px;order:-1}
+  .ls-collage{height:380px}
+  .ls-hero-title{font-size:clamp(2.5rem,10vw,4rem)}
+  .ls-scenic-grid{grid-template-columns:1fr}
+  .ls-culture-grid{grid-template-columns:1fr}
+  .ls-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px;gap:var(--sp-md)}
+  .ls-gallery-item:nth-child(1){grid-row:span 1}
+  .ls-gallery-item:nth-child(4){grid-column:span 1}
+  .ls-audio-player{flex-wrap:wrap}
+  .ls-audio-player audio{width:100%}
+}
+@media(max-width:480px){
+  .ls-hero-visual{min-height:300px}
+  .ls-collage{height:300px}
+  .ls-gallery{grid-template-columns:1fr;grid-auto-rows:200px}
+}
+</style>
+</head>
+<body class="ls-page">
+
+<!-- NAVBAR -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">传播正能量资讯</a>
+    <div class="nav-links" id="nav-links">
+      <a href="../../index.html">首页</a>
+      <a href="../social.html">社会热点</a>
+      <a href="../entertainment.html">文娱影视</a>
+      <a href="../finance-sports.html">财经体育</a>
+      <a href="../culture-life.html" class="active">文旅生活</a>
+      <a href="../ranking.html">热点排行</a>
+      <a href="../interaction.html">互动专区</a>
+    </div>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<section class="ls-hero" id="lsHero">
+  <div class="hero-bg" style="position:absolute;inset:0;z-index:0"><img src="../../assets/images/lushan/lushan-hero.jpg" alt="" style="width:100%;height:100%;object-fit:cover;opacity:.15"><div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,250,248,.5) 0%,rgba(250,250,248,.85) 70%,#FAFAF8 100%)"></div></div>
+  <div class="hero-watermark hero-watermark-bl">LU SHAN</div>
+  <div class="hero-glow hero-glow--br" style="background:radial-gradient(circle,rgba(46,196,166,.08) 0%,transparent 70%)"></div>
+  <div class="ls-hero-inner">
+    <!-- Left: Editorial Text -->
+    <div>
+      <div class="ls-hero-tag anim-fade">旅游文化专题</div>
+      <h1 class="ls-hero-title">
+        <span class="hero-line-wrap"><span class="hero-line">庐<span class="hl">山</span></span></span>
+      </h1>
+      <p class="ls-hero-sub">云雾 · 瀑布 · 湖光与诗意山水</p>
+      <p class="ls-hero-desc">庐山以雄奇秀丽的山水景观和深厚的人文底蕴闻名。这里有飞瀑、湖泊、山谷、古建筑与自然风光，也承载着丰富的历史记忆和文化想象。</p>
+      <div class="ls-hero-btns">
+        <a href="#scenery" class="btn btn-primary">探索庐山</a>
+        <a href="#gallery" class="btn btn-outline">查看图集</a>
+      </div>
+    </div>
+    <!-- Right: Image Collage -->
+    <div class="ls-hero-visual anim-scale">
+      <div class="ls-collage">
+        <div class="ls-collage-img ls-ci-1">
+          <img src="../../assets/images/lushan/lushan-waterfall.jpg" alt="庐山瀑布风景" style="width:100%;height:100%;object-fit:cover;display:block">
+          <span class="ls-ci-label">瀑布</span>
+        </div>
+        <div class="ls-collage-img ls-ci-2">
+          <img src="../../assets/images/lushan/lushan-lake.jpg" alt="庐山湖泊风景" style="width:100%;height:100%;object-fit:cover;display:block">
+          <span class="ls-ci-label">湖泊</span>
+        </div>
+        <div class="ls-collage-img ls-ci-3">
+          <img src="../../assets/images/lushan/lushan-valley.jpg" alt="庐山山谷风景" style="width:100%;height:100%;object-fit:cover;display:block">
+          <span class="ls-ci-label">山谷</span>
+        </div>
+        <div class="ls-collage-img ls-ci-4">
+          <img src="../../assets/images/lushan/lushan-pavilion.jpg" alt="庐山亭阁风景" style="width:100%;height:100%;object-fit:cover;display:block">
+          <span class="ls-ci-label">亭阁</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SCENERY: 庐山印象 (4图文模块) ============================ -->
+<section class="section" id="scenery">
+  <div class="container">
+    <div class="section-head anim-fade">
+      <div class="section-eyebrow">SCENERY</div>
+      <h2 class="section-title">庐山印象</h2>
+      <p class="section-sub">在山水、云雾、瀑布与湖光之间，庐山展现出独特的自然层次与东方审美。</p>
+    </div>
+
+    <div class="ls-scenic-grid anim-stagger">
+
+      <!-- Module 1 -->
+      <div class="ls-scenic-card">
+        <div class="ls-scenic-img">
+          <img src="../../assets/images/lushan/lushan-waterfall.jpg" alt="庐山瀑布与山间亭阁" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div class="ls-scenic-body">
+          <h3>飞瀑与山亭</h3>
+          <p>庐山的瀑布从山谷间倾泻而下，亭阁掩映在林木之间，形成山水与建筑相互呼应的古典画面。</p>
+          <div class="tag-row"><span class="ls-tag-nature">自然风光</span><span class="ls-tag-warm">建筑人文</span></div>
+        </div>
+      </div>
+
+      <!-- Module 2 -->
+      <div class="ls-scenic-card">
+        <div class="ls-scenic-img">
+          <img src="../../assets/images/lushan/lushan-lake.jpg" alt="庐山湖光山色" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div class="ls-scenic-body">
+          <h3>湖光与远山</h3>
+          <p>湖面倒映着天空与群山，蓝天、白云、山影与水色交织，呈现出清澈、开阔而宁静的自然气质。</p>
+          <div class="tag-row"><span class="ls-tag-nature">湖泊山水</span></div>
+        </div>
+      </div>
+
+      <!-- Module 3 -->
+      <div class="ls-scenic-card">
+        <div class="ls-scenic-img">
+          <img src="../../assets/images/lushan/lushan-gorge.jpg" alt="庐山秋色与溪谷" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div class="ls-scenic-body">
+          <h3>秋色与溪谷</h3>
+          <p>秋季的庐山层林尽染，溪流穿过岩石与林间，展现出四季变化中的细腻美感。</p>
+          <div class="tag-row"><span class="ls-tag-nature">秋色风光</span><span class="ls-tag-warm">溪谷景观</span></div>
+        </div>
+      </div>
+
+      <!-- Module 4 -->
+      <div class="ls-scenic-card">
+        <div class="ls-scenic-img">
+          <img src="../../assets/images/lushan/lushan-valley.jpg" alt="庐山峡谷瀑布" style="width:100%;height:100%;object-fit:cover;display:block">
+        </div>
+        <div class="ls-scenic-body">
+          <h3>峡谷与清潭</h3>
+          <p>峡谷深处，瀑布、岩石与碧绿水潭构成灵动的自然景观，让人感受到庐山山水的壮美与清幽。</p>
+          <div class="tag-row"><span class="ls-tag-nature">峡谷溪流</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CULTURE: 4信息卡 ============================ -->
+<section class="section" style="background:var(--bg-warm)">
+  <div class="container">
+    <div class="section-head anim-fade">
+      <div class="section-eyebrow">CULTURE</div>
+      <h2 class="section-title">山水之外，是庐山的人文底色</h2>
+      <p class="section-sub">庐山不仅拥有秀美的自然景观，也拥有深厚的人文历史。历代文人墨客曾在这里留下诗文、游记与文化记忆，使庐山成为自然风景与文化精神交织的地方。山中的建筑、道路、亭台与湖泊，共同构成了独特的庐山文化景观。</p>
+    </div>
+
+    <div class="ls-culture-grid anim-stagger">
+      <div class="ls-culture-card">
+        <span class="ls-cc-icon">🏔️</span>
+        <h4>自然风光</h4>
+        <p>飞瀑、湖泊、山谷与云雾共同构成庐山丰富的自然层次。</p>
+      </div>
+      <div class="ls-culture-card">
+        <span class="ls-cc-icon">📜</span>
+        <h4>历史文化</h4>
+        <p>庐山承载着丰富的人文故事，成为历代文人书写山水精神的重要场所。</p>
+      </div>
+      <div class="ls-culture-card">
+        <span class="ls-cc-icon">🎨</span>
+        <h4>诗意山水</h4>
+        <p>这里的山水不仅是风景，也是一种东方审美与文化想象。</p>
+      </div>
+      <div class="ls-culture-card">
+        <span class="ls-cc-icon">📷</span>
+        <h4>旅行记忆</h4>
+        <p>每一次抵达庐山，都是一次对自然、历史与自我的重新观察。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ GALLERY: 庐山图集 ============================ -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head anim-fade">
+      <div class="section-eyebrow">GALLERY</div>
+      <h2 class="section-title">庐山图集</h2>
+      <p class="section-sub">以旅行画册的方式，记录庐山的不同风景片段。</p>
+    </div>
+
+    <div class="ls-gallery anim-stagger">
+      <div class="ls-gallery-item">
+        <img src="../../assets/images/lushan/lushan-waterfall.jpg" alt="庐山瀑布" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span class="ls-gi-label">庐山瀑布</span>
+      </div>
+      <div class="ls-gallery-item">
+        <img src="../../assets/images/lushan/lushan-lake.jpg" alt="庐山湖泊" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span class="ls-gi-label">庐山湖泊</span>
+      </div>
+      <div class="ls-gallery-item">
+        <img src="../../assets/images/lushan/lushan-valley.jpg" alt="庐山山谷" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span class="ls-gi-label">庐山山谷</span>
+      </div>
+      <div class="ls-gallery-item">
+        <img src="../../assets/images/lushan/lushan-pavilion.jpg" alt="庐山亭阁" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span class="ls-gi-label">庐山亭阁</span>
+      </div>
+      <div class="ls-gallery-item">
+        <img src="../../assets/images/lushan/lushan-stream.jpg" alt="庐山溪流" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span class="ls-gi-label">庐山溪流</span>
+      </div>
+      <div class="ls-gallery-item">
+        <img src="../../assets/images/lushan/lushan-mountain.jpg" alt="庐山远山" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span class="ls-gi-label">庐山远山</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AUDIO: 音乐模块 ============================ -->
+<section class="section" style="background:var(--bg-warm)">
+  <div class="container">
+    <div class="section-head anim-fade">
+      <div class="section-eyebrow">MUSIC</div>
+      <h2 class="section-title">山间回响</h2>
+      <p class="section-sub">伴随轻柔的背景音乐，进入庐山山水之间的旅行氛围。</p>
+    </div>
+
+    <div class="ls-audio-card anim-scale">
+      <h3>🎵 庐山 · 山水之间</h3>
+      <p class="ls-audio-desc">一曲山间回响，带您感受庐山的云雾、飞瀑与诗意自然。</p>
+      <div class="ls-audio-player">
+        <div class="ls-ap-icon">♪</div>
+        <div class="ls-ap-info">
+          <div class="ls-ap-title">庐山背景音乐</div>
+          <div class="ls-ap-hint">jhbj.mp3 · 轻音乐 · 山水氛围</div>
+        </div>
+        <audio controls preload="none">
+          <source src="../../music/jhbj.mp3" type="audio/mpeg">
+          <source src="../../assets/audio/universe/fangxin-qu-fei.mp3" type="audio/mpeg">
+          您的浏览器不支持音频播放。背景音乐：music/jhbj.mp3
+        </audio>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ BOTTOM NAV ============================ -->
+<section class="section-sm">
+  <div class="container">
+    <div class="ls-bottom-row anim-fade">
+      <a href="../culture-life.html" class="btn btn-back"><span class="arr">←</span> 返回文旅生活</a>
+      <a href="../../index.html" class="btn btn-ghost">返回首页</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">传播正能量资讯</div>
+    <div class="footer-links">
+      <a href="../../index.html">首页</a>
+      <a href="../social.html">社会热点</a>
+      <a href="../entertainment.html">文娱影视</a>
+      <a href="../finance-sports.html">财经体育</a>
+      <a href="../culture-life.html">文旅生活</a>
+      <a href="../ranking.html">热点排行</a>
+      <a href="../interaction.html">互动专区</a>
+    </div>
+    <p class="footer-copy">© 2026 传播正能量 · 综合资讯平台</p>
+    <p style="font-size:.72rem;color:var(--text-4);margin-top:4px">用资讯连接世界，用内容记录生活。</p>
+  </div>
+</footer>
+
+<button class="back-top" aria-label="返回顶部">↑</button>
+
+<!-- ============================ SCRIPTS ============================ -->
+<script src="../../js/vendor/gsap.min.js"></script>
+<script src="../../js/vendor/ScrollTrigger.min.js"></script>
+<script>
+/* ============================================
+   lushan.js — GSAP轻盈动效
+   山水之间的文化诗意
+   ============================================ */
+(function(){
+  if(typeof gsap==='undefined')return;
+  gsap.registerPlugin(ScrollTrigger);
+  var ok=true;
+
+  /* Nav scroll glass */
+  var nav=document.getElementById('navbar');
+  if(nav){ScrollTrigger.create({start:80,onEnter:function(){nav.classList.add('scrolled')},onLeaveBack:function(){nav.classList.remove('scrolled')}})}
+
+  /* Hero line reveal */
+  var hl=document.querySelectorAll('.hero-line');
+  if(hl.length){gsap.set(hl,{y:'110%',opacity:0});gsap.to(hl,{y:0,opacity:1,duration:1,ease:'power4.out',delay:.5})}
+
+  /* Hero collage staggered entry */
+  var ci=document.querySelectorAll('.ls-collage-img');
+  if(ci.length){gsap.set(ci,{opacity:0,scale:.9,y:30});gsap.to(ci,{opacity:1,scale:1,y:0,duration:.7,stagger:.12,ease:'power3.out',delay:.6})}
+
+  /* Fade elements */
+  document.querySelectorAll('.anim-fade').forEach(function(e,i){
+    gsap.set(e,{opacity:0,y:30});gsap.to(e,{opacity:1,y:0,duration:.7,ease:'power3.out',delay:.2+i*.05,scrollTrigger:{trigger:e,start:'top 88%',toggleActions:'play none none none'}})
+  });
+
+  /* Scale elements */
+  document.querySelectorAll('.anim-scale').forEach(function(e){
+    gsap.set(e,{opacity:0,scale:.94});gsap.to(e,{opacity:1,scale:1,duration:.75,ease:'power3.out',scrollTrigger:{trigger:e,start:'top 88%',toggleActions:'play none none none'}})
+  });
+
+  /* Stagger containers */
+  document.querySelectorAll('.anim-stagger').forEach(function(c){
+    var ch=Array.from(c.children);if(!ch.length)return;
+    gsap.set(ch,{opacity:0,y:36});gsap.to(ch,{opacity:1,y:0,duration:.6,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:c,start:'top 88%',toggleActions:'play none none none'}})
+  });
+
+  /* Back to top */
+  var bt=document.querySelector('.back-top');
+  if(bt){window.addEventListener('scroll',function(){bt.classList.toggle('show',window.scrollY>500)},{passive:true});bt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})}
+
+  /* Mobile nav toggle */
+  var tg=document.getElementById('nav-toggle');
+  var nl=document.getElementById('nav-links');
+  if(tg&&nl){tg.addEventListener('click',function(){tg.classList.toggle('open');nl.classList.toggle('open')});nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){tg.classList.remove('open');nl.classList.remove('open')})})}
+
+  /* Safety: ensure all animated content is visible after 3s */
+  setTimeout(function(){if(ok){document.querySelectorAll('[class*=anim-]').forEach(function(e){e.style.opacity='1';e.style.transform='none';e.style.visibility='visible'})}},3000);
+})();
+</script>
+</body>
+</html>
